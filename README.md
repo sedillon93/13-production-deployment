@@ -23,7 +23,7 @@ We'll be using Heroku as our production server. Heroku is a "Platform as a Servi
 ---
 
 ## Submission Instructions
-When you are finished with lab, follow these steps to submit your work. Create one Pull Request (aka: "PR") from your Forked repo to the CF repo with your changes, and you'll each submit that same PR link in Canvas.
+When you are finished with lab, follow these steps to submit your work.
 
 1. Ensure that all your local changes are committed to `master`, and pushed to your origin repo.
 2. Ensure that your `master` branch is deployed to Heroku
