@@ -19,7 +19,6 @@ We'll be using Heroku as our production server. Heroku is a "Platform as a Servi
 3. Don't forget to set your Github Token as an environment variable in the Heroku app
 4. Deploy to your new instance!
 5. Let your brilliance shine unto the world!
-
 ---
 
 ## Submission Instructions
@@ -71,3 +70,5 @@ Meets all Assignment Reqs | 6
 Uses idiomatic code style | 3
 Follows proper Git workflow | 1
 **Total** | **10**
+
+Here is the link to the deployed site: https://cflab13.herokuapp.com/
