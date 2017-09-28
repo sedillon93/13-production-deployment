@@ -7,8 +7,7 @@ const bodyParser = require('body-parser');
 const requestProxy = require('express-request-proxy'); // REVIEW: We've added a new package here to our requirements, as well as in the package.json
 const PORT = process.env.PORT || 3000;
 const app = express();
-// const conString = 'postgres://USERNAME:PASSWORD@HOST:PORT';
-const conString = ''; // TODO: Don't forget to set your own conString
+const conString = process.env.DATABASE_URL || 'postgres://localhost:5432/blog_db'; // DONE: Don't forget to set your own conString
 const client = new pg.Client(conString);
 client.connect();
 client.on('error', err => console.error(err));
@@ -32,8 +31,8 @@ app.get('/github/*', proxyGitHub);
 app.get('/new', (request, response) => response.sendFile('new.html', {root: './public'}));
 app.get('/admin', (request, response) => response.sendFile('admin.html', {root: './public'}));
 app.get('/articles', (request, response) => {
-  client.query(`
-    SELECT * FROM articles
+  client.query(
+    `SELECT * FROM articles
     INNER JOIN authors
       ON articles.author_id=authors.author_id;`
   )
